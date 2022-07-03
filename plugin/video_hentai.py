@@ -4,7 +4,6 @@ import requests
 import os
 import subprocess
 import json
-from bs4 import BeautifulSoup
 
 def hentailink(client, callback_query):
     click = callback_query.data
