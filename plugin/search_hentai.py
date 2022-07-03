@@ -10,7 +10,7 @@ def hentaisearch(client, message):
     msgSplit = msg.split(" ")
     msgSplit.remove(msgSplit[0])
     query = " "
-    query = query.join(dtSplit)
+    query = query.join(msgSplit)
     if query == "":
         client.send_animation(chat_id=message.chat.id,
                               animation="https://telegra.ph/file/cdeae50a8a23041b01935.mp4",
