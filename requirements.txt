@@ -1,0 +1,5 @@
+pyrogram==1.4.16
+TgCrypto
+ffmpeg
+requests
+requests_html
