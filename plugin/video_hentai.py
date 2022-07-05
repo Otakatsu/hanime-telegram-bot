@@ -7,6 +7,7 @@ import subprocess
 import json
 
 MONGO_URL = os.environ.get("MONGO_URL", None) 
+CACHE_CHANNEL = os.environ.get("CACHE_CHANNEL", None) 
 
 def hentailink(client, callback_query):
     click = callback_query.data
@@ -68,6 +69,7 @@ def hentaidl(client, callback_query):
             callback_query.edit_message_text("""Uploading Now""", parse_mode="markdown")              
             K = client.send_document(chat_id=chatid, document=f'{link}.mp4', caption=f"""Download By @hanime_dl_bot""", parse_mode="markdown")   
             file_id = K.document.file_id
+            client.send_document(chat_id=CACHE_CHANNEL, document=file_id, caption=f"""Download By @hanime_dl_bot""", parse_mode="markdown")                               
             hentai.insert_one({"name": link, "file_id": file_id})
             os.remove(file1)
         if url == "":     
@@ -75,16 +77,18 @@ def hentaidl(client, callback_query):
             file1 = f"{link}.mp4"        
             subprocess.run("ffmpeg -i {} -acodec copy -vcodec copy {}".format(url3, file1), shell=True)
             callback_query.edit_message_text("""Uploading Now""", parse_mode="markdown")       
-            K = client.send_document(chat_id=chatid, document=f'{link}.mp4', caption=f"""Download By @hanime_dl_bot""", parse_mode="markdown")   
+            K = client.send_document(chat_id=chatid, document=f'{link}.mp4', caption=f"""Download By @hanime_dl_bot""", parse_mode="markdown")               
             file_id = K.document.file_id
+            client.send_document(chat_id=CACHE_CHANNEL, document=file_id, caption=f"""Download By @hanime_dl_bot""", parse_mode="markdown")                               
             hentai.insert_one({"name": link, "file_id": file_id})
             os.remove(file1)
     if is_hentai:
         if not url == "":        
-            file_id = is_hentai["file_id"]                          
-            client.send_document(chat_id=chatid, file_id, caption=f"""Download By @hanime_dl_bot""", parse_mode="markdown")                     
+            file_id = is_hentai["file_id"]   
+            callback_query.edit_message_text("""Uploading Now""", parse_mode="markdown")                       
+            client.send_document(chat_id=chatid, document=file_id, caption=f"""Download By @hanime_dl_bot""", parse_mode="markdown")                        
         if url == "":     
-            file_id = is_hentai["file_id"]                          
-            client.send_document(chat_id=chatid, file_id, caption=f"""Download By @hanime_dl_bot""", parse_mode="markdown")              
-        
+            file_id = is_hentai["file_id"]  
+            callback_query.edit_message_text("""Uploading Now""", parse_mode="markdown")                        
+            client.send_document(chat_id=chatid, document=file_id, caption=f"""Download By @hanime_dl_bot""", parse_mode="markdown")
  
