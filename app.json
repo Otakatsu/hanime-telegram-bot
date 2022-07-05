@@ -5,7 +5,15 @@
         "BOT_TOKEN": {
             "description": "telegram bot token here",
             "required": true
-        },        
+        },
+        "MONGO_URL": {
+            "description": "mongo db url",
+            "required": true
+        },         
+        "CACHE_CHANNEL": {
+            "description": "example -1001774284945",
+            "required": true
+        },                 
         "API_ID": {
             "description": "telegram api id here",
             "required": true
