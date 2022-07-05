@@ -1,5 +1,7 @@
 pyrogram==1.4.16
 TgCrypto
+pymongo
+dnspython
 ffmpeg
 requests
 requests_html
