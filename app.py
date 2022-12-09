@@ -17,7 +17,7 @@ logging.basicConfig(
 
 API_ID = "1885739"
 API_HASH = "6bd646032e21791c0913cd75a88dd0b7"
-BOT_TOKEN = "5821869791:AAGxBDGBHllS4-DiDyzM5_lwmywqh8nZqSg"
+BOT_TOKEN = "5842551671:AAGUd4ogAqBCs2aE2_YcJFud9aulc0hLOSI"
 
 bot = Client(
     "comic",
