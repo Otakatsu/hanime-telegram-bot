@@ -13,7 +13,7 @@ def infohentai(client, callback_query):
     query = clickSplit[1]
     chatid = callback_query.from_user.id
     messageid = callback_query.message.message_id
-    url = f"https://hanime.metavoid.info/details?id={query}" 
+    url = f"https://bakufu.vercel.app/api/hanime/details?id={query}" 
     result = requests.get(url) 
     result = result.json()   
     description = result["description"]
