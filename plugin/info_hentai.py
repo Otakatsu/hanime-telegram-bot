@@ -22,8 +22,6 @@ def infohentai(client, callback_query):
     view = result["views"]     
     released_date = result["released_date"]
     keyb = [
-        [InlineKeyboardButton("Download Now", callback_data=f"dlt_{query}")],
-        [InlineKeyboardButton("Link", callback_data=f"link_{query}")]
-    ]
+        [InlineKeyboardButton("Watch Now", callback_data=f"link_{query}")]]        
     repl = InlineKeyboardMarkup(keyb)
     client.edit_message_text(chat_id=chatid, message_id=messageid, text=f"""**Name:** [{name}]({img})\n**View:** {view}\n**Release Date:** {released_date}""", reply_markup=repl, parse_mode="markdown")
