@@ -16,7 +16,7 @@ def hentaisearch(client, message):
                               animation="https://telegra.ph/file/cdeae50a8a23041b01935.mp4",
                               caption=f"""**/search <space> hentai name**""", parse_mode="markdown")
     else:
-        url = f"https://hanime.metavoid.info/search?query={query}&page=0"
+        url = f"https://apikatsu.otakatsu.studio/api/hanime/search?query={query}&page=0"
         result = requests.get(url) 
         result = result.json()
         K = result["response"]
