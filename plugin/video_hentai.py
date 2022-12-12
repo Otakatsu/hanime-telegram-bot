@@ -15,7 +15,7 @@ def hentailink(client, callback_query):
     link = clickSplit[1]
     chatid = callback_query.from_user.id
     messageid = callback_query.message.message_id
-    url = f"https://hanime.metavoid.info/link?id={link}" 
+    url = f"https://apikatsu.otakatsu.studio/api/hanime/link?id={link}" 
     result = requests.get(url) 
     result = result.json()  
     url = result["data"][0]["url"]
@@ -55,7 +55,7 @@ def hentaidl(client, callback_query):
     hentai = hentaidb["MangaDb"]["Name"]
     chatid = callback_query.from_user.id
     messageid = callback_query.message.message_id
-    url = f"https://hanime.metavoid.info/link?id={link}" 
+    url = f"https://apikatsu.otakatsu.studio/api/hanime/link?id={link}" 
     result = requests.get(url) 
     result = result.json()  
     url = result["data"][0]["url"]
