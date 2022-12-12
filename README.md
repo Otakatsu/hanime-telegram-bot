@@ -1,4 +1,4 @@
-# hentai_dl_bot
+# Hanime Telegram Bot
 A Telegram Bot to get All Hentai Download.
 
 ## How To Host
